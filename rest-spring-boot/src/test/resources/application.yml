@@ -1,7 +1,9 @@
 server:
-    port: 80
+  port: 8888
+
 cors:
-  originPatterns: http://localhost:8080,http://localhost:3000
+  originPatterns: http://localhost:8080,http://fagneravila.com.br:7070,http://avila.com.br:8070
+
 file:
   upload-dir: /Users/fagne/OneDrive/Documentos/code/uploadDir
 security:
@@ -12,19 +14,19 @@ security:
 email:
   subject: "Default Subject"
   message: "Default Message"
+
 spring:
   application:
     name: rest-spring-boot
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/erudiodb?useTimezone=true&serverTimezone=UTC
-    username: root
-    password: root
   jpa:
     hibernate:
       ddl-auto: update
     properties:
       hibernate:
+      # Adicione propriedades se necessário
+      # dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: false
     open-in-view: false
   mail:
@@ -42,15 +44,14 @@ spring:
       file-size-threshold: 2KB
       max-file-size: 200MB
       max-request-size: 215MB
+
 logging:
   level:
-    root: INFO # NIVEL DE PROJETO
-    #net.sf.jasperreports.engine.*: TRACE
-      #br.com.avila: INFO # NIVEL DE PACOTE
-spring-doc:
-  paths-to-match:
-    - /auth/** # CAMINHOS QUE SERÃO EXIBIDOS NO SWAGGER
-    - /api/**/v1/**
-  swagger-ui:
-    use-root-path: true # USAR O CAMINHO RAIZ DO PROJETO
+    root: INFO
+    # br.com.avila: INFO
 
+springdoc:
+  paths-to-match: /api/**/v1/**
+  swagger-ui:
+    use-root-path: true
+#jpol cnvb hqxc zjmh
